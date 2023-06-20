@@ -5,30 +5,39 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    overflow: hidden;
 }
 
-header {
-    background-color: #f8f9fa;
+h1 {
     padding: 10px 0;
     text-align: left;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     padding-left: 20px;
-}
-
-header h1 {
     margin: 0;
     font-size: 1.2em;
-    font-family: 'Palatino', serif; /* Changed the font to Palatino */
+    font-family: 'Palatino', serif; 
     font-weight: 400;
     letter-spacing: 2px;
 }
 
 #carousel {
     flex-grow: 1;
-    width: calc(100vw - 40px);
     position: relative;
     overflow: hidden;
     margin: 20px;
+}
+
+#carousel-controls {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+
+#carousel-images {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
 }
 
 .carousel-item {
@@ -37,18 +46,6 @@ header h1 {
     position: absolute;
     transition: opacity 1s;
     object-fit: contain;
-}
-
-#carousel-controls {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1;
 }
 
 .arrow-btn {
@@ -61,5 +58,12 @@ header h1 {
 }
 
 .arrow-btn:active {
-    transform: scale(0.8); /* Scales the button down to 80% of its original size when clicked */
+    transform: scale(0.8);
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8em; 
+    }
 }
