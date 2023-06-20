@@ -6,8 +6,18 @@ const cycleItems = () => {
     for (let i = 0; i < itemCount; i++) {
         items[i].style.display = 'none';
     }
-    items[currentIndex].style.display = 'block';
+    const orientation = window.innerWidth > window.innerHeight ? 'landscape' : 'portrait';
+    let newItemIndex = currentIndex;
+    let newItem = items[newItemIndex];
+    while (newItem.dataset.orientation !== orientation && newItem.dataset.orientation !== 'square') {
+        newItemIndex = (newItemIndex + 1) % itemCount;
+        newItem = items[newItemIndex];
+    }
+    newItem.style.display = 'block';
+    currentIndex = newItemIndex;
 }
+
+window.addEventListener('resize', cycleItems);
 
 document.getElementById('prev').addEventListener('click', () => {
     currentIndex -= 1;
