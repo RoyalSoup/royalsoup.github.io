@@ -1,17 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Tristan Deniet's Image Carousel</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Tristan Deniet</h1>
-    <div id="carousel">
-        <img class="carousel-item square" src="images/img1.jpg" alt="Image 1">
-        <img class="carousel-item portrait" src="images/img2.jpg" alt="Image 2" style="display:none;">
-        <img class="carousel-item portrait" src="images/img3.jpg" alt="Image 3" style="display:none;">
-        <img class="carousel-item landscape" src="images/img4.jpg" alt="Image 4" style="display:none;">
+    <h1 class="title">Tristan Deniet</h1>
+    <div id="carousel" class="carousel">
+        <img src="images/image1.jpg" class="carousel-image">
     </div>
+    <div class="arrow arrow-left" onclick="event.stopPropagation(); changeImage(event, false)">&#10094;</div>
+    <div class="arrow arrow-right" onclick="event.stopPropagation(); changeImage(event, true)">&#10095;</div>
     <script src="carousel.js"></script>
 </body>
 </html>
